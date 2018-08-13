@@ -1,0 +1,27 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . --overwrite --asar=true --prune=true --out=dist/win --platform=win32 --arch=x64 --electron-version=1.6.8 --icon=assets/win/icon.ico --version-string.CompanyName=\"Jonathan Brimer\" --version-string.FileDescription=\"Jonathan Brimer\" --version-string.ProductName=\"Camera Control\""
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^2.0.0"
+  },
+  "dependencies": {
+    "electron-packager": "^12.1.0",
+    "jQuery": "^1.7.4"
+  }
+}

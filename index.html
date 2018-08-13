@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>PTZ Optics Camera Controller</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style type="text/css">
+    body {
+      padding:3em 1em;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="app-title">PTZ Optics Camera Controller</h1>
+      <!-- All of the Node.js APIs are available in this renderer process. -->
+      We are using Node.js <script>document.write(process.versions.node)</script>,
+      Chromium <script>document.write(process.versions.chrome)</script>,
+      and Electron <script>document.write(process.versions.electron)</script>.
+
+      <form id="cameraConnectionForm">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Camera HTTP address" aria-label="Server address" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-info" type="button" id="button-addon2">Save</button>
+          </div>
+        </div>
+      </form>
+
+      <table class="table">
+        <tr>
+          <th>Pan / Tilt</th>
+          <td id="lastPanTiltCmd"></td>
+        </tr>
+        <tr>
+          <th>Zoom</th>
+          <td id="lastZoomCmd"></td>
+        </tr>
+        <tr>
+          <th>Latency</th>
+          <td id="lastCmdLatency"></td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+    <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+  </body>
+</html>
