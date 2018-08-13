@@ -1,13 +1,16 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
+  "name": "ptzoptics-gamepad-electron",
+  "version": "0.1.1",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . --overwrite --asar=true --prune=true --out=dist/win --platform=win32 --arch=x64 --electron-version=1.6.8 --icon=assets/win/icon.ico --version-string.CompanyName=\"Jonathan Brimer\" --version-string.FileDescription=\"Jonathan Brimer\" --version-string.ProductName=\"Camera Control\""
+    "clean": "rm -rf ./dist",
+    "pack:win": "electron-packager . --overwrite --asar=true --prune=true --out=dist/win --platform=win32 --arch=x64 --electron-version=2.0.0 --version-string.CompanyName=\"Victory Christian Centre (NZ)\" --version-string.FileDescription=\"Joshua Waihi\" --version-string.ProductName=\"PTZ Optics Camera Controller\"",
+		"prerelease:win": "rm -rf release/win64 && mkdirp release/win64",
+		"release:win": "cp -v dist/win/ptzoptics-gamepad-electron-win32-x64/{LICENSE,*.exe} release/win64"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/fiasco/ptzoptics-gamepad-electron",
   "keywords": [
     "Electron",
     "quick",
@@ -23,5 +26,9 @@
   "dependencies": {
     "electron-packager": "^12.1.0",
     "jQuery": "^1.7.4"
+  },
+  "build": {
+    "appId": "fiasco.ptzoptics.gamepad",
+    "productName": "PTZ Optics Camera Controller"
   }
 }
